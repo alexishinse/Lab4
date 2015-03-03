@@ -1,7 +1,10 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
+#include <string>
+#include <iostream>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+using namespace std;
 
 namespace DynamicArrayTests
 {
@@ -9,45 +12,45 @@ namespace DynamicArrayTests
 	{
 	public:
 
-		//TEST_METHOD(la_capacite_par_defaut_d_un_dynamicArray_est_de_100)
-		//{
-		//	//Arrange
-		//	const int CAPACITE_DEFAUT = 100;
-		//	DynamicArray<string> tableau;
+		TEST_METHOD(la_capacite_par_defaut_d_un_dynamicArray_est_de_100)
+		{
+			//Arrange
+			const int CAPACITE_DEFAUT = 100;
+			DynamicArray<string> tableau;
 
-		//	//Action
-		//	int capacite = tableau.getCapacite();
+			//Action
+			int capacite = tableau.getCapacite();
 
-		//	//Assert
-		//	Assert::AreEqual(CAPACITE_DEFAUT, capacite);
-		//}
+			//Assert
+			Assert::AreEqual(CAPACITE_DEFAUT, capacite);
+		}
 
-		//TEST_METHOD(la_valeur_par_defaut_des_elements_d_un_dyanmicArray_est_0)
-		//{
-		//	//Action
-		//	DynamicArray<string> tableau;
+		TEST_METHOD(la_valeur_par_defaut_des_elements_d_un_dyanmicArray_est_0)
+		{
+			//Action
+			DynamicArray<string> tableau;
 
-		//	//Assert
-		//	for (int i = 0; i < tableau.getCapacite(); i++)
-		//	{
-		//		Assert::AreEqual(string(""), tableau.getElement(i));
-		//	}
-		//}
+			//Assert
+			for (int i = 0; i < tableau.getCapacite(); i++)
+			{
+				Assert::AreEqual(string(""), tableau.getElement(i));
+			}
+		}
 
 
-		//TEST_METHOD(setElement_devrait_initialiser_un_element_du_dynamicArray)
-		//{
-		//	//Arrange
-		//	const string NOUVELLE_VALEUR_ELEMENT = "abc";
-		//	const int INDEX_ELEMENT = 1;
-		//	DynamicArray<string> tableau;
+		TEST_METHOD(setElement_devrait_initialiser_un_element_du_dynamicArray)
+		{
+			//Arrange
+			const string NOUVELLE_VALEUR_ELEMENT = "abc";
+			const int INDEX_ELEMENT = 1;
+			DynamicArray<string> tableau;
 
-		//	//Action
-		//	tableau.setElement(INDEX_ELEMENT, NOUVELLE_VALEUR_ELEMENT);
+			//Action
+			tableau.setElement(INDEX_ELEMENT, NOUVELLE_VALEUR_ELEMENT);
 
-		//	//Assert
-		//	Assert::AreEqual(NOUVELLE_VALEUR_ELEMENT, tableau.getElement(INDEX_ELEMENT));
-		//}
+			//Assert
+			Assert::AreEqual(NOUVELLE_VALEUR_ELEMENT, tableau.getElement(INDEX_ELEMENT));
+		}
 
 		//TEST_METHOD(augumenter_la_capacite_d_un_dynamicArray_devrait_preserver_le_contenu_deja_present)
 		//{
