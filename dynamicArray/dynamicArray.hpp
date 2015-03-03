@@ -12,6 +12,15 @@ DynamicArray<T>::DynamicArray(){
 }
 
 template <class T>
+DynamicArray<T>::DynamicArray(int _capacite){
+	this->tabCapacite = _capacite;
+	this->tableau = new T[_capacite];
+	for (int i = 0; i < tabCapacite; i++){
+		this->tableau[i] = T();
+	}
+}
+
+template <class T>
 DynamicArray<T>::~DynamicArray(){
 	delete[] tableau;
 }
@@ -24,6 +33,23 @@ void DynamicArray<T>::setElement(int _indexElement, T _element){
 template <class T>
 int DynamicArray<T>::getCapacite(){
 	return this->tabCapacite;
+}
+
+template <class T>
+void DynamicArray<T>::setCapacite(int _capacite){
+	T* nouvelleTable = new T[_capacite];
+	
+	for (int i = 0; i < tabCapacite;i++){
+		nouvelleTable[i] = this->tableau[i];
+	}
+
+	for (int i = tabCapacite; i < _capacite; i++){
+		nouvelleTable[i] = T();
+	}
+
+	delete[] tableau;
+	this->tableau = nouvelleTable;
+	this->tabCapacite = _capacite;
 }
 
 template <class T>

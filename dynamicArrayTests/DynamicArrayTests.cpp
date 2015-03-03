@@ -52,32 +52,32 @@ namespace DynamicArrayTests
 			Assert::AreEqual(NOUVELLE_VALEUR_ELEMENT, tableau.getElement(INDEX_ELEMENT));
 		}
 
-		//TEST_METHOD(augumenter_la_capacite_d_un_dynamicArray_devrait_preserver_le_contenu_deja_present)
-		//{
-		//	//Arrange
-		//	const int CAPACITE_DEPART = 3;
-		//	const int NOUVELLE_CAPACITE = 5;
+		TEST_METHOD(augumenter_la_capacite_d_un_dynamicArray_devrait_preserver_le_contenu_deja_present)
+		{
+			//Arrange
+			const int CAPACITE_DEPART = 3;
+			const int NOUVELLE_CAPACITE = 5;
 
-		//	DynamicArray<float> tableau(CAPACITE_DEPART);
+			DynamicArray<float> tableau(CAPACITE_DEPART);
 
-		//	for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
-		//	{
-		//		tableau.setElement(i, float(i*i));
-		//	}
+			for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
+			{
+				tableau.setElement(i, float(i*i));
+			}
 
-		//	//Action
-		//	tableau.setCapacite(NOUVELLE_CAPACITE);
+			//Action
+			tableau.setCapacite(NOUVELLE_CAPACITE);
 
-		//	//Assert
-		//	for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
-		//	{
-		//		Assert::AreEqual(float(i*i), tableau.getElement(i));
-		//	}
-		//	for (unsigned int i = CAPACITE_DEPART; i < NOUVELLE_CAPACITE; ++i)
-		//	{
-		//		Assert::AreEqual(0.0f, tableau.getElement(i));
-		//	}
-		//}
+			//Assert
+			for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
+			{
+				Assert::AreEqual(float(i*i), tableau.getElement(i));
+			}
+			for (unsigned int i = CAPACITE_DEPART; i < NOUVELLE_CAPACITE; ++i)
+			{
+				Assert::AreEqual(0.0f, tableau.getElement(i));
+			}
+		}
 
 		//TEST_METHOD(diminuer_la_capacite_d_un_dynamicArray_devrait_modifier_sa_capacite)
 		//{
