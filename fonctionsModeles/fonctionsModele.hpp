@@ -12,3 +12,15 @@ T TrouverMax(const T _tabValeur[], int _nbElement){
 	return valeurMax;
 
 }
+
+template <typename T>
+T CalculerSomme(const T _tabValeur[], int _nbElement){
+	T sommeTotal = _tabValeur[0];
+
+	for (int i = 1; i < _nbElement; i++){
+		sommeTotal = sommeTotal + _tabValeur[i];
+	}
+
+	return sommeTotal;
+
+}
