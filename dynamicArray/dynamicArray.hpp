@@ -27,6 +27,9 @@ DynamicArray<T>::~DynamicArray(){
 
 template <class T>
 void DynamicArray<T>::setElement(int _indexElement, T _element){
+	if (_indexElement >= tabCapacite) { 
+		setCapacite(_indexElement + 1);
+	}
 	this->tableau[_indexElement] = _element;
 }
 
@@ -52,10 +55,10 @@ void DynamicArray<T>::setCapacite(int _capacite){
 	}
 
 	if (_capacite > tabCapacite){
-	for (int i = tabCapacite; i < _capacite; i++){
+	    for (int i = tabCapacite; i < _capacite; i++){
 		nouvelleTable[i] = T();
-	}
-} 
+	    }
+    } 
 
 	delete[] tableau;
 	this->tableau = nouvelleTable;
