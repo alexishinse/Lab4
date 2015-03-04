@@ -13,6 +13,9 @@ DynamicArray<T>::DynamicArray(){
 
 template <class T>
 DynamicArray<T>::DynamicArray(int _capacite){
+
+	if (_capacite < 1) throw invalid_argument("La capacite ne peut etre inferieur a 1.");
+
 	this->tabCapacite = _capacite;
 	this->tableau = new T[_capacite];
 	for (int i = 0; i < tabCapacite; i++){
@@ -40,6 +43,9 @@ int DynamicArray<T>::getCapacite(){
 
 template <class T>
 void DynamicArray<T>::setCapacite(int _capacite){
+
+	if (_capacite < 1) throw invalid_argument("La capacite ne peut etre inferieur a 1.");
+
 	T* nouvelleTable = new T[_capacite];
 	int nbIteration;
 
@@ -67,5 +73,8 @@ void DynamicArray<T>::setCapacite(int _capacite){
 
 template <class T>
 T DynamicArray<T>::getElement(int _indexElement){
+
+	if (_indexElement >= tabCapacite) throw std::out_of_range("L'element indiqué par l'index ne fait pas partie du tableau.");
+
 	return this->tableau[_indexElement];
 }
