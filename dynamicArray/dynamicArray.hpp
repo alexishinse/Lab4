@@ -38,14 +38,24 @@ int DynamicArray<T>::getCapacite(){
 template <class T>
 void DynamicArray<T>::setCapacite(int _capacite){
 	T* nouvelleTable = new T[_capacite];
-	
-	for (int i = 0; i < tabCapacite;i++){
+	int nbIteration;
+
+	if (_capacite < tabCapacite){
+		nbIteration = _capacite;
+	}
+	else{
+		nbIteration = tabCapacite;
+	}
+
+	for (int i = 0; i < nbIteration; i++){
 		nouvelleTable[i] = this->tableau[i];
 	}
 
+	if (_capacite > tabCapacite){
 	for (int i = tabCapacite; i < _capacite; i++){
 		nouvelleTable[i] = T();
 	}
+} 
 
 	delete[] tableau;
 	this->tableau = nouvelleTable;
